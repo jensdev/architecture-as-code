@@ -29,5 +29,5 @@ flowchart TB
     TicketSysteem -->|"Stuurt e-tickets via"| Mail
 
     %% De doorklik-link
-    click TicketSysteem "./02-containers.md" "Open de Containers"
+    click TicketSysteem "https://github.com/jensdev/architecture-as-code/blob/main/02-containers.md" "Open het Container Diagram" _blank
 ```
