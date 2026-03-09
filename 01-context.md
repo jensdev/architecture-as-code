@@ -1,3 +1,9 @@
+# 🌍 Niveau 1: Systeem Context (Bioscoop Ticket Systeem)
+
+Dit is de "wereldkaart" van onze architectuur. Dit diagram is ontworpen om door iedereen binnen het bedrijf begrepen te worden, van de directie tot aan de ontwikkelaars.
+
+We behandelen ons systeem hier als een gesloten doos (*black box*). Het diagram toont uitsluitend het grote plaatje: **wie** gebruikt ons systeem (de actoren) en met welke **externe partijen** communiceren we, zonder dat je wordt afgeleid door technische details.
+
 ```mermaid
 ---
 config:
@@ -11,15 +17,23 @@ flowchart TB
     classDef external fill:#999999,stroke:#666666,color:#fff
 
     %% Actoren
-    Klant[("Filmfan\n[Persoon]")]:::person
-    Kassa[("Bioscoopmedewerker\n[Persoon]")]:::person
+    Klant[("Filmfan
+    [Persoon]")]:::person
+    Kassa[("Bioscoopmedewerker
+    [Persoon]")]:::person
 
     %% Het Hoofdsysteem (Klikbaar)
-    TicketSysteem["Bioscoop Ticket Systeem\n[Systeem]\n👉 Klik hier om in te zoomen"]:::system
+    TicketSysteem["Bioscoop Ticket Systeem
+    [Systeem]
+    👉 Klik hier om in te zoomen"]:::system
 
     %% Externe Systemen
-    Betaal["Betaalprovider\n[Systeem]\n(bijv. Mollie / Adyen)"]:::external
-    Mail["E-mail Service\n[Systeem]\n(bijv. SendGrid)"]:::external
+    Betaal["Betaalprovider
+    [Systeem]
+    (bijv. Mollie / Adyen)"]:::external
+    Mail["E-mail Service
+    [Systeem]
+    (bijv. SendGrid)"]:::external
 
     %% Relaties
     Klant -->|"Zoekt films & bestelt tickets"| TicketSysteem

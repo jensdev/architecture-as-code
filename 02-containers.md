@@ -1,3 +1,9 @@
+# 📦 Niveau 2: Containers (Bioscoop Ticket Systeem)
+
+Hier zoomen we één stap dieper in en openen we de "zwarte doos" van ons hoofdsysteem. Dit overzicht is vooral waardevol voor software architecten, systeembeheerders en ontwikkelaars.
+
+In dit diagram zie je de zogenaamde *deployable units*: de grote, onafhankelijk draaiende onderdelen (containers) waaruit ons systeem bestaat. Het toont de interactie tussen onze frontends, backend API's en databases, en geeft de belangrijkste technologische keuzes (zoals React en Node.js) weer.
+
 ```mermaid
 ---
 config:
@@ -12,21 +18,33 @@ flowchart TB
     classDef database fill:#438dd5,stroke:#2e6295,color:#fff,shape:cylinder
 
     %% Actoren & Externe systemen van Niveau 1 (als context)
-    Klant[("Filmfan\n[Persoon]")]:::person
-    Kassa[("Bioscoopmedewerker\n[Persoon]")]:::person
-    Betaal["Betaalprovider\n[Systeem]"]:::external
-    Mail["E-mail Service\n[Systeem]"]:::external
+    Klant[("Filmfan
+    [Persoon]")]:::person
+    Kassa[("Bioscoopmedewerker
+    [Persoon]")]:::person
+    Betaal["Betaalprovider
+    [Systeem]"]:::external
+    Mail["E-mail Service
+    [Systeem]"]:::external
 
     %% De binnenkant van ons systeem
     subgraph TICKETS ["Bioscoop Ticket Systeem"]
         direction TB
         
-        WebApp["Web Applicatie\n[Container: React]\nDe website voor de klanten thuis"]:::container
-        POS["Kassa Applicatie\n[Container: iPad App]\nVoor de medewerker aan de balie"]:::container
+        WebApp["Web Applicatie
+        [Container: React]
+        De website voor de klanten thuis"]:::container
+        POS["Kassa Applicatie
+        [Container: iPad App]
+        Voor de medewerker aan de balie"]:::container
         
-        API["API Backend\n[Container: Node.js]\nHet brein dat alle regels beheert"]:::container
+        API["API Backend
+        [Container: Node.js]
+        Het brein dat alle regels beheert"]:::container
         
-        DB[("Database\n[Container: PostgreSQL]\nBewaart films, zalen en stoelen")]:::database
+        DB[("Database
+        [Container: PostgreSQL]
+        Bewaart films, zalen en stoelen")]:::database
     end
 
     %% Relaties
@@ -39,4 +57,6 @@ flowchart TB
     API -->|"Leest/Schrijft data"| DB
     API -->|"Start online betaling"| Betaal
     API -->|"Geeft opdracht voor ticketmail"| Mail
+
+    click API "https://github.com/jensdev/architecture-as-code/blob/main/03-components.md" "Bekijk de API Componenten" _top
 ```
