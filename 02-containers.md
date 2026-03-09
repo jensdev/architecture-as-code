@@ -58,5 +58,8 @@ flowchart TB
     API -->|"Start online betaling"| Betaal
     API -->|"Geeft opdracht voor ticketmail"| Mail
 
+    DB ~~~ Betaal
+    DB ~~~ Mail
+
     click API "https://github.com/jensdev/architecture-as-code/blob/main/03-components.md" "Bekijk de API Componenten" _top
 ```
