@@ -11,19 +11,31 @@ flowchart TB
     classDef component fill:#85bbf0,stroke:#5b93c9,color:#000
     classDef person fill:#08427b,stroke:#052e56,color:#fff
 
-    Klant[("Filmfan\n[Persoon]")]:::person
-    API["API Backend\n[Container: Node.js]"]:::container
+    Klant[("Filmfan
+    [Persoon]")]:::person
+    API["API Backend
+    [Container: Node.js]"]:::container
 
     subgraph WEB_CONTAINER ["Web Applicatie (React)"]
         direction TB
         
-        Router["App Router\n[Component: React Router]\nBeheert welke pagina wordt getoond"]:::component
+        Router["App Router
+        [Component: React Router]
+        Beheert welke pagina wordt getoond"]:::component
         
-        MovieList["Movie List View\n[Component: React UI]\nToont de lijst met actuele films"]:::component
-        BookingFlow["Booking Flow View\n[Component: React UI]\nScherm voor de stoelkeuze en winkelmandje"]:::component
+        MovieList["Movie List View
+        [Component: React UI]
+        Toont de lijst met actuele films"]:::component
+        BookingFlow["Booking Flow View
+        [Component: React UI]
+        Scherm voor de stoelkeuze en winkelmandje"]:::component
         
-        Store["Redux Store\n[Component: Redux]\nBeheert de globale 'state' (het winkelmandje)"]:::component
-        ApiClient["API Client\n[Component: Axios Hook]\nVerzorgt alle uitgaande HTTP communicatie"]:::component
+        Store["Redux Store
+        [Component: Redux]
+        Beheert de globale 'state' (het winkelmandje)"]:::component
+        ApiClient["API Client
+        [Component: Axios Hook]
+        Verzorgt alle uitgaande HTTP communicatie"]:::component
     end
 
     Klant -->|"Bekijkt in de browser"| Router

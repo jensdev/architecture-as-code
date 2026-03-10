@@ -73,8 +73,8 @@ flowchart TB
     PaymentAdapter -->|"API Call"| Betaal
     EmailAdapter -->|"API Call"| Mail
     
-    %% DE LINK NAAR NIVEAU 4 (Vervang URL door jouw repo voor de demo)
-    click BookingSvc "[https://github.com/jensdev/architecture-as-code/blob/main/04-code-booking-service.md](https://github.com/jensdev/architecture-as-code/blob/main/04-code-booking-service.md)" "Bekijk de Code Details" _blank
+    %% DE LINK NAAR NIVEAU 4
+    click BookingSvc "https://github.com/jensdev/architecture-as-code/blob/main/04-code-booking-service.md]" "Bekijk de Code Details" _blank
 ```
 
 🔙 **[Klik hier om terug te gaan naar Niveau 2: Containers](./02-containers.md)**
