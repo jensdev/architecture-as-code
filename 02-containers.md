@@ -5,11 +5,7 @@ Hier zoomen we één stap dieper in en openen we de "zwarte doos" van ons hoofds
 In dit diagram zie je de zogenaamde *deployable units*: de grote, onafhankelijk draaiende onderdelen (containers) waaruit ons systeem bestaat. Het toont de interactie tussen onze frontends, backend API's en databases, en geeft de belangrijkste technologische keuzes (zoals React en Node.js) weer.
 
 ```mermaid
----
-config:
-  flowchart:
-    defaultRenderer: "elk"
----
+%%{init: {"flowchart": {"defaultRenderer": "elk"}} }%%
 flowchart TB
     %% Styling
     classDef person fill:#08427b,stroke:#052e56,color:#fff
@@ -61,5 +57,7 @@ flowchart TB
     DB ~~~ Betaal
     DB ~~~ Mail
 
-    click API "https://github.com/jensdev/architecture-as-code/blob/main/03-components.md" "Bekijk de API Componenten" _top
+    %% Maak zowel de WebApp als de API klikbaar (vervang URL met jouw repo)
+    click WebApp "https://github.com/jensdev/architecture-as-code/blob/main/03-components-webapp.md" "Bekijk de React Componenten" _blank
+    click API "https://github.com/jensdev/architecture-as-code/blob/main/03-components-api.md" "Bekijk de API Componenten" _blank
 ```

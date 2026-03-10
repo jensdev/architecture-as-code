@@ -5,11 +5,7 @@ Dit is de "wereldkaart" van onze architectuur. Dit diagram is ontworpen om door 
 We behandelen ons systeem hier als een gesloten doos (*black box*). Het diagram toont uitsluitend het grote plaatje: **wie** gebruikt ons systeem (de actoren) en met welke **externe partijen** communiceren we, zonder dat je wordt afgeleid door technische details.
 
 ```mermaid
----
-config:
-  flowchart:
-    defaultRenderer: "elk"
----
+%%{init: {"flowchart": {"defaultRenderer": "elk"}} }%%
 flowchart TB
     %% Styling
     classDef person fill:#08427b,stroke:#052e56,color:#fff

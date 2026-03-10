@@ -1,27 +1,26 @@
 # 🧩 Niveau 3: Componenten (API Backend)
 
-Hier zoomen we in op één specifieke container uit het vorige niveau: de **API Backend**. 
+Hier zijn we ingezoomd op de **API Backend (Node.js)**. Dit diagram is specifiek bedoeld voor het backend-team. 
 
-Dit diagram toont de interne structuur van de Node.js applicatie. Ontwikkelaars kunnen hier zien hoe de code logisch is opgedeeld in controllers, services en repositories, en hoe deze onderdelen samenwerken om een ticket te boeken.
+We zien hier hoe de inkomende netwerkverzoeken worden opgevangen door de controllers, hoe de businesslogica is opgesplitst in specifieke services, en hoe de adapters praten met de buitenwereld.
+
+*(👉 **Tip:** Klik op de Booking Service om door te zoomen naar de broncode in Niveau 4.)*
 
 ```mermaid
----
-config:
-  flowchart:
-    defaultRenderer: "elk"
----
+%%{init: {"flowchart": {"defaultRenderer": "elk"}} }%%
 flowchart TB
     %% Styling
     classDef container fill:#438dd5,stroke:#2e6295,color:#fff
     classDef component fill:#85bbf0,stroke:#5b93c9,color:#000
+    classDef clickableComponent fill:#85bbf0,stroke:#5b93c9,color:#000,cursor:pointer,stroke-width:2px,stroke-dasharray: 5 5
     classDef external fill:#999999,stroke:#666666,color:#fff
     classDef database fill:#438dd5,stroke:#2e6295,color:#fff,shape:cylinder
 
-    %% Context van buitenaf (Grijze/Blauwe blokken om aan te geven waar we zijn)
     WebApp["Web Applicatie
     [Container]"]:::container
     POS["Kassa Applicatie
     [Container]"]:::container
+    
     DB[("Database
     [Container]")]:::database
     Betaal["Betaalprovider
@@ -41,7 +40,9 @@ flowchart TB
         Zoekt films en controleert de planning"]:::component
         BookingSvc["Booking Service
         [Component: TypeScript Class]
-        Bevat de kernlogica voor reserveringen"]:::component
+        Bevat de kernlogica voor reserveringen
+        👉 Klik voor Niveau 4 👈"]:::clickableComponent
+        
         PaymentAdapter["Payment Adapter
         [Component: TypeScript Class]
         Vertaalt onze data naar Mollie/Adyen formaat"]:::component
@@ -71,4 +72,9 @@ flowchart TB
     Repo -->|"Leest/Schrijft (SQL)"| DB
     PaymentAdapter -->|"API Call"| Betaal
     EmailAdapter -->|"API Call"| Mail
+    
+    %% DE LINK NAAR NIVEAU 4 (Vervang URL door jouw repo voor de demo)
+    click BookingSvc "[https://github.com/jensdev/architecture-as-code/blob/main/04-code-booking-service.md](https://github.com/jensdev/architecture-as-code/blob/main/04-code-booking-service.md)" "Bekijk de Code Details" _blank
 ```
+
+🔙 **[Klik hier om terug te gaan naar Niveau 2: Containers](./02-containers.md)**
